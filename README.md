@@ -1,6 +1,7 @@
 # 2022 Hackathon
-# This program is used to keep track of books that a teacher has. Teachers can look up books by ISBN10 and the program will add it to a list. They can also lend it out to students, or transfer the book to another teacher. 
-# The program is command line based for right now, i tried to make it inuitive to use. 
+# This program is used to keep track of books that a teacher has in their classroom, as well as which students have checked out a book. Teachers can look up books by ISBN 10 or 13 and the program will add it to a list. They can also transfer the book to another teacher. 
+# The program is command line based for right now, i tried to make it inuitive to use.
+but in the proecess made some componants break. Which is sort of a reoccuring theme. Individual pieces work well, it just doesnt all work well together. 
 # User input is not validated, nor are edge cases. Please stick to the provided options in the prompts of the program. 
 ## There are 2 hard coded ISBNs at the top of main.py for you to use, if you would like. They are A Series Of Unfortunate Events, books 1 and 2 of the series. 
 ## getbooks.py contains the majority of the code that does stuff. 
