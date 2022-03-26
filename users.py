@@ -1,3 +1,5 @@
+#This is done in this way for further abstraction later down the road. 
+
 class Person:
     def __init__(self): 
         self.name = ""
@@ -20,13 +22,3 @@ class Student(Person):
         self.name = name
         self.role = "student"
         self.booksInPossession = []
-
-
-def changeUser(usersList):
-    print("what user do you want to change to?")
-    i = 0
-    for user in usersList:
-        print(f"{i}: {user.name}")
-        i = i +1
-    choice = input("selection: ")
-    return usersList[int(choice)]

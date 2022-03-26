@@ -35,13 +35,11 @@ def getBooks(isbn):
     #print(js_dict['items'][0]['volumeInfo'].keys())
 
 
-#def saveBooks(name, book):
-    #with open(f'{name}_booklist.csv','w') as f:
+#saves the book to a file in .csv format with 1 book per line
 def saveBooksToFile(bookList,person):
     with open(f'{person.name}_booklist.csv','w') as f:        
         for book in bookList:
             f.write(f"{book.owner}, {book.possessor}, {book.title},{book.authors},{book.pages},{book.ISBN_10},{book.ISBN_13}, {book.description}\n")
-
 
 #takes a person and loads their booklist
 def loadBooks(person):
@@ -66,7 +64,7 @@ def loadBooks(person):
             #update the book with the contents
             book.updateBook(title, authors, description, pages, ISBN10, ISBN13,person)
             booklist.append(book)
-      
+        
     return booklist
 
 #prints all of the books for a given list. 
@@ -79,38 +77,10 @@ def printAllBooks(booklist):
         for book in booklist:
             book.printBook()
 
-#user validation and the ability to enter books by things other than isbn 10 need to be added.
-#search feature is needed
-def enterBook(user):
-    done = "n"
-    booklist = []
-    while done == "n":
-        book = Book()
-        #isbn = input("enter the ISBN 10 of the book you want to add.\n")
-        isbn = "9781405281782"
-        title, authors, description, pages, ISBN10, ISBN13 = getBooks(isbn)
-        book.updateBook(title, authors, description, pages, ISBN10, ISBN13,user)
-        booklist.append(book)
-       
-        done = input("are you done adding books (y or n)")
-
-    if (len(user.booklist) == 0):
-        user.booklist = booklist
-        user.booksOnHand = booklist
-        user.booksInPossession = booklist
-    
-    #todo check for duplicates. 
 
 #returns the owner of the book.
 def WhoOwnsThisBook(book):
     return book.owner
-
-def checkOutHelper(currentUser,transferee):
-    numBooks = len(currentUser.booksInPossession)
-    print("which book would you like to check out?")
-    print(f"You currently have {numBooks} books in your posession.")
-    transferNumber = input(f"please select a number from 0-{numBooks-1}: ")
-    checkout(currentUser.booksInPossession[int(transferNumber)],transferee,currentUser)
 
 #a person can check out a book. 
 def checkout(book,checker, owner):
@@ -125,20 +95,13 @@ def checkout(book,checker, owner):
             checker.booksInPossession.append(book)
             break
         else: pass
-#helper function for return Book. the borrower is the current user. 
-def returnBookHelper(book,owner,borrower):
-    numBooks = len(borrower.booksInPossession)
-    print("which book would you like to return?")
-    print(f"You currently have {numBooks} books in your posession.")
-    transferNumber = input(f"please select a number from 0-{numBooks-1}: ")
-    returnBook(borrower.booksInPossession[int(transferNumber)],owner,borrower)
+
 #return the book to its rightful owner. 
 def returnBook(book,owner,borrower):
     #the owner is now in possession of the book once again
     book.possessor = book.owner 
     #remove the book from the lending list 
     lentList = list(owner.booksLentOut)
-    #print(lentList)
     i = 0
     for b in lentList:
         if(b[1].ISBN_10 == book.ISBN_10):
@@ -175,9 +138,7 @@ def removeBookFromList(booklist,bookToRemove):
             i = i +1    
 
 
-
-
-#searching for books template 
+#searching for books template, unused in this project but will be used for the final project 
 """
 def searchByTitle(title):
     titleAPI = https://www.googleapis.com/books/v1/volumes?q=title:'

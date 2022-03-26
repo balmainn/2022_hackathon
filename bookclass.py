@@ -10,7 +10,7 @@ class Book:
         self.description = ""
         self.owner = ""
         self.possessor = ""
-        #need due date
+        
 
     #standard all in one print method
     def printBook(self):
