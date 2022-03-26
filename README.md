@@ -28,7 +28,7 @@ but in the proecess made some componants break. Which is sort of a reoccuring th
 ## Saving changes to a file will save the book as a .csv that can be used to reload from later. This save function works as intended. (9)
 
 ## please always start by adding a book. There is a hard coded line that is commented out if you would like to skip adding a book every time you run it 
-## Also transfering or checking out a book with either no book in the list, or a value not of 0 will crash it. I set these up as general functions to make things easier to work with in the long term. Since my goal is to expand this project to be other things than just books, it makes sense to do it this way for now. 
+## Also transfering or checking out a book with either no book in the list, will crash it. Please ensure that the count of the books is more than 1 before attempting a value that is not 0. I set these up as general functions to make things easier to work with in the long term. Since my goal is to expand this project to be other things than just books, it makes sense to do it this way for now. 
 
 # final thoughts
 ## this project was pretty huge and I bit off more than i could chew. But I had a good time and I will continue working on this even after the hackathon ends, as it is a program my wife would like to use for her classroom. Now that I have attempted this, I have a much better understanding of how to put together a better version next time. 
