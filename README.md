@@ -2,7 +2,13 @@
 # This program is used to keep track of books that a teacher has. Teachers can look up books by ISBN10 and the program will add it to a list. They can also lend it out to students, or transfer the book to another teacher. 
 # The program is command line based for right now, i tried to make it inuitive to use. 
 # User input is not validated, nor are edge cases. Please stick to the provided options in the prompts of the program. 
-## There are 2 hard coded ISBNs for you to use, if you would like. They are A Series Of Unfortunate Events, books 1 and 2 of the series. 
+## There are 2 hard coded ISBNs at the top of main.py for you to use, if you would like. They are A Series Of Unfortunate Events, books 1 and 2 of the series. 
+## getbooks.py contains the majority of the code that does stuff. 
+## users.py contains definitions for person, student, and teacher. 
+## bookclass.py contains the class definitions of what a book is. 
+## helperfunctions.py contains helper functions used by the interface to interact with the functions in getbooks.py 
+## main.py is the main function that is used for testing with some sort of interface.
+
 # in order of the menu
 ## adding a book will add the book to the current user's list (0)
 ## checking out a book will move the book from the teacher's list into the student's list. (1)
